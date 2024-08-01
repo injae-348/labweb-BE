@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: labweb_be
+
+# P6Spy Configuration
+decorator:
+  datasource:
+    p6spy:
+      enable-logging: true
