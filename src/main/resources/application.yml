@@ -14,6 +14,9 @@ spring:
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
 
+  web:
+    resources:
+      add-mappings: false # NoHandlerFoundException 발생시 static 폴더에서 찾지 않도록 설정
 
 logging:
   level:
