@@ -31,9 +31,12 @@ dependencies {
 
     // p6spy 의존성 추가 - SQL 로그 확인
     implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.9.0'
-    
-    // mariadb 추가
+
+    // mariadb 의존성 추가
     runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+
+    // dotenv 의존성 추가
+    implementation "me.paulschwarz:spring-dotenv:4.0.0"
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
