@@ -4,6 +4,7 @@ import lombok.Getter;
 
 @Getter
 public enum ImageType {
+
     NEWS("NEWS"),
     PROFESSOR("PROFESSOR"),
     ALUMNI("ALUMNI"),

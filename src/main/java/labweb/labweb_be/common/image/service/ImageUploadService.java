@@ -15,6 +15,7 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 public class ImageUploadService {
+
     private final ImageRepository imageRepository;
     private final FileGenerator fileGenerator;
 

@@ -19,6 +19,7 @@ import java.util.List;
 @RequestMapping("/api")
 @RequiredArgsConstructor
 public class ImageUploadController {
+
     private final ImageUploadService imageUploadService;
 
     @PostMapping("/image")
