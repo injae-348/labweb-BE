@@ -1,4 +1,4 @@
-package labweb.labweb_be.common.image.repository;
+package labweb.labweb_be.image.repository;
 
 import labweb.labweb_be.image.domain.Image;
 import labweb.labweb_be.image.domain.ImageType;
