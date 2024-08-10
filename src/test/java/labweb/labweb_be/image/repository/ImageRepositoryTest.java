@@ -1,17 +1,14 @@
 package labweb.labweb_be.common.image.repository;
 
-import labweb.labweb_be.common.image.domain.Image;
-import labweb.labweb_be.common.image.domain.ImageType;
-import org.assertj.core.api.Assertions;
+import labweb.labweb_be.image.domain.Image;
+import labweb.labweb_be.image.domain.ImageType;
+import labweb.labweb_be.image.repository.ImageRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
-
 
 
 @SpringBootTest

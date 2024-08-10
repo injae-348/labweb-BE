@@ -9,6 +9,6 @@ import java.util.List;
 
 @Repository
 public interface ImageRepository extends JpaRepository<Image, Long> {
-    //TODO : 이미지 타입에 따라, 해당 게시글의 PK에 따라 구분하기 -> 이게 맞을까..?
-    List<Image> findImage(ImageType imageType, String storedFileName);
+
+    List<Image> findImageByStoredFileName(String storedFileName);
 }
