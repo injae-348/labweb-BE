@@ -3,7 +3,7 @@ package labweb.labweb_be.news.domain;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import labweb.labweb_be.common.BaseEntity;
-import labweb.labweb_be.common.image.domain.Image;
+import labweb.labweb_be.image.domain.Image;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;

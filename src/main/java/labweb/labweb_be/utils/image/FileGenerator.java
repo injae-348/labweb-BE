@@ -1,13 +1,12 @@
 package labweb.labweb_be.utils.image;
 
-import labweb.labweb_be.common.image.domain.Image;
-import labweb.labweb_be.common.image.domain.ImageType;
+import labweb.labweb_be.image.domain.Image;
+import labweb.labweb_be.image.domain.ImageType;
 import org.springframework.stereotype.Component;
 import org.springframework.util.ObjectUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 

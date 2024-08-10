@@ -1,15 +1,18 @@
 package labweb.labweb_be.news.service;
 
 import jakarta.transaction.Transactional;
-import labweb.labweb_be.common.image.domain.Image;
-import labweb.labweb_be.common.image.domain.ImageType;
-import labweb.labweb_be.common.image.repository.ImageRepository;
+import labweb.labweb_be.image.domain.Image;
+import labweb.labweb_be.image.domain.ImageType;
+import labweb.labweb_be.image.repository.ImageRepository;
+import labweb.labweb_be.image.service.ImageUploadService;
 import labweb.labweb_be.news.domain.News;
 import labweb.labweb_be.news.dto.NewsReqDto;
 import labweb.labweb_be.news.repository.NewsRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -17,29 +20,21 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class NewsService {
 
+    private final ImageUploadService imageUploadService;
+
     private final NewsRepository newsRepository;
     private final ImageRepository imageRepository;
 
     @Transactional
-    public Long createNews(NewsReqDto newsReqDto) {
+    public Long createNews(NewsReqDto newsReqDto, List<MultipartFile> files, ImageType imageType) throws Exception {
+        List<Image> images = Collections.emptyList();
 
-        List<Image> images = newsReqDto.images().stream()
-                .map(imageReqDto -> new Image(
-                        imageReqDto.originalFileName(),
-                        imageReqDto.storedFileName(),
-                        imageReqDto.fileSize(),
-                        imageReqDto.imageType()
-                )).collect(Collectors.toList());
+        if (files != null && !files.isEmpty()) {
+            images = imageUploadService.addImage(files, imageType);
+        }
 
-        News news = News.builder()
-                .date(newsReqDto.date())
-                .activity(newsReqDto.activity())
-                .content(newsReqDto.content())
-                .images(images)
-                .build();
-
+        News news = newsReqDto.toEntity(images);
         return newsRepository.save(news).getId();
     }
-
 
 }
