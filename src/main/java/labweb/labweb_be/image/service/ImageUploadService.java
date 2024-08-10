@@ -1,8 +1,8 @@
-package labweb.labweb_be.common.image.service;
+package labweb.labweb_be.image.service;
 
-import labweb.labweb_be.common.image.domain.Image;
-import labweb.labweb_be.common.image.domain.ImageType;
-import labweb.labweb_be.common.image.repository.ImageRepository;
+import labweb.labweb_be.image.domain.Image;
+import labweb.labweb_be.image.domain.ImageType;
+import labweb.labweb_be.image.repository.ImageRepository;
 import labweb.labweb_be.utils.image.FileGenerator;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -10,7 +10,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -29,8 +28,8 @@ public class ImageUploadService {
             for (Image image : images) {
                 savedImages.add(imageRepository.save(image));
             }
+            return savedImages;
         }
-        return images;
     }
 
 }

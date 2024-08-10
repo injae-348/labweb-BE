@@ -1,4 +1,4 @@
-package labweb.labweb_be.common.image.domain;
+package labweb.labweb_be.image.domain;
 
 import lombok.Getter;
 
